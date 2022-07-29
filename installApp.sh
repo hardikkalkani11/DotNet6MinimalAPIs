@@ -1,2 +1,2 @@
 sudo killall -9 dotnet
-nohup dotnet /home/ubuntu/src/HelloWorldWebCore/build_output/HelloWorldWebCore.dll &>/dev/null &
+nohup dotnet /home/ec2-user/RoundTheCode.FrontEndPostApi/build_output/RoundTheCode.FrontEndPostApi.dll &>/dev/null &
