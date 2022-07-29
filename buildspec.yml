@@ -1,1 +1,19 @@
-
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      dotnet: 6.0
+  pre_build: 
+    commands:
+      - dotnet restore RoundTheCode.FrontEndPostApi/RoundTheCode.FrontEndPostApi.csproj
+  build:
+    commands:
+      - dotnet build RoundTheCode.FrontEndPostApi/RoundTheCode.FrontEndPostApi.csproj
+  post_build:
+    commands:
+      - dotnet publish -c release -o ./build_output RoundTheCode.FrontEndPostApi/RoundTheCode.FrontEndPostApi.csproj
+artifacts:
+  files:
+    - RoundTheCode.FrontEndPostApi/build_output/*
+    - appspec.yml
+    - installApp.sh
